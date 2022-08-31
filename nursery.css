@@ -1,0 +1,111 @@
+h1 { /*set h1 to green color*/
+    color:#5E7554;
+    text-align: left;
+    margin: 25px 0px 0px 25px; 
+    padding: 10px; 
+}
+h3 { 
+    text-align: left;
+    margin: 25px 0px 25px 25px; 
+    padding: 10px; 
+   
+}
+p{ /*set p to black color*/ 
+    color: black; 
+    padding: 10px; 
+    margin: 0px 0px 0px 25px; 
+}
+.navbar { 
+    overflow: hidden; 
+    background-color: #41513F; 
+    position: fixed; 
+    top: 0; 
+    width: 100%; 
+    display: inline-block;
+} 
+.navbar a {
+    float: left; 
+    display: block;
+    color: white;
+    padding: 14px 16px; 
+    text-align: center;
+    text-decoration: none;
+    background-color: #41513F;
+}
+ul { 
+    list-style-type: none; 
+    margin: 0; 
+    padding: 0; 
+    overflow: hidden; 
+    background-color: #41513F; 
+}
+#cart {
+    width: 93%; 
+    margin: auto; 
+}
+#cart td, #cart th { 
+    border: 1px dotted #b4cbd9; 
+    padding: 6px; 
+}
+#cart th { 
+    padding-top: 20px; 
+    padding-bottom: 12px; 
+    text-align: center; 
+    background-color: #8FAD6D;
+    color: white; 
+}
+#cart tr:nth-child(odd) {
+    background-color: #B8CB9E;
+}
+#cart tr:hover { 
+    background-color: #85A887;
+}
+#cart a:link {
+    color: seagreen;
+    text-decoration: none;
+    text-align: center;
+}
+#cart a:visited { 
+    color: darkgreen;
+    text-decoration: none;
+    text-align: center;
+}
+#cart a:active { 
+    color: darkgreen;
+    text-decoration: none;
+    text-align: center;
+}
+.content {
+   
+	border: 20px solid #f9f9f9;
+	float: none;
+    margin: 25px 0px 50px;
+}
+.tooltip {
+    position: relative;
+    display: inline-block;
+    border-bottom: 1px dotted black; 
+}
+.tooltip .tooltiptext { 
+    visibility: hidden; 
+    width: 100px; 
+    background-color: darkseagreen; 
+    color: #fff; 
+    text-align: center; 
+    border-radius: 5px; 
+    padding: 5px 0; 
+    position: absolute; 
+    z-index: 1;
+}
+.tooltip:hover .tooltiptext { 
+    visibility: visible;
+}
+
+#btn, #submitbtn { 
+    margin: 25px 0px 25px 38px; 
+}
+img { float:left; 
+	max-width: 50%; 
+	height: auto;
+}
+ 

@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<!--Kimberlly Salinas--> 
+<!--2022 February 8-->
+<html lang="en">
+<head>
+    <title>Luna's Nursery</title>
+    <link rel="stylesheet" href="nursery.css">
+<style>
+	table, th, td {
+	border: 1px solid black;
+	border-collapse: collapse;
+	}
+    body { 
+    cursor: crosshair;
+    font-family: Optima, sans-serif;
+    margin: 0;
+    }
+</style>
+</head>
+<body>
+<div class="navbar">
+<nav>
+<ul>
+    <li><a href="nursery.html">Home</a></li>
+    <li><a href="#bottom">About</a></li>
+</ul>
+</nav>
+</div>  
+<div class="content">
+<h1>Growing at Luna's Nursery</h1>
+<p>Thank you for visiting Luna's Nursery. We have grown and cared for these houseplants in North Carolina since 2018. Our mission is to offer and deliver a large selection of high quality live plants from our home to yours. We're happy you have chosen Luna's Nursery! </p>
+<h3>Shopping Cart</h3>
+<form onsubmit = "summarize()">
+<table id="cart">
+	<tr> <!-- Headings for table-->
+	<th>price</th>
+	<th>qty</th>
+	<th>item</th>
+	<th>description</th>
+	</tr>
+    
+	<tr><!-- first row-->
+    <td><input type="checkbox" id="check1">
+	   <label for="plant">$5.99</label></td>
+	<td><input type="number" id="num1" name="num1" onblur = "qtyEmpty();" min="1" max="10" disabled></td>
+        <td><div class="tooltip">snake plant
+            <span class="tooltiptext">Snake plant is four feet tall. This plant requires little sunlight. It can be homed in a darker area and should be watered once a week.</span></div>
+            <br><img src = "snakeplant.png" alt="Snake Plant"></td>
+	<td><a href="https://www.thespruce.com/snake-plant-care-overview-1902772">grow & care</a></td>
+	</tr>
+	
+	<tr> 
+	<td><!-- second row-->
+	   <input type="checkbox" id="check2">
+	   <label for="plant">$4.99</label></td>
+	<td>
+	   <input type="number" id="num2" name="num2" onblur = "qtyEmpty();" min="1" max="10" disabled></td>
+	<td><div class="tooltip">watermelon peperomia
+            <span class="tooltiptext">Watermelon peperomia is two feet tall. This is a moisture-loving plant and requieres medium indirect sunlight. They should not be exposed to too much sun because they are prone to burning. </span></div><br><img src="watermelonpep.png" alt="Watermelon Peperomia"></td>
+	<td><a href=https://www.thespruce.com/watermelon-peperomia-guide-5201470>grow & care</a></td>
+	</tr>
+	
+	<tr> 
+	<td><!-- third row-->
+	   <input type="checkbox" id="check3">
+	   <label for="plant">$8.99</label></td>
+	<td>
+	   <input type="number" id="num3" name="num3" onblur = "qtyEmpty();" min="1" max="10" disabled></td>
+	<td><div class="tooltip">philodendron
+            <span class="tooltiptext">Philodendron is one foot tall. This plant is easy to care for and grow as it appreciates bright, indirect light, well draining soil, and regular watering. </span></div><br><img src="philodendron.png" alt="Philendron"></td>
+	<td><a href="https://www.thespruce.com/philodendron-micans-care-5201173">grow & care</a></td>
+	</tr>
+</table> 
+	<button id ="submitbtn" type="submit" value="Submit">Submit</button>
+	<button id = "btn" type="reset" value="Reset">Reset</button>
+</form>
+    <footer id="bottom"><p>A black lab named Luna, loves to sunbathe next to our plants at home. Luna and I enjoy watching these beautiful plants grow and want to share their beauty with you all.</p></footer>
+    
+</div>
+<script> 
+"use strict"    
+    
+//add event listener for check box
+    for (let i = 1; i <= 3; i++) {
+    let id = 'check' + i;
+    document.getElementById(id).addEventListener("click", processCheck);
+  }
+
+//add event listener for button
+  document.getElementById('submitbtn').addEventListener("onsubmit", summarize);
+    
+//enable/disable numeric input when use checks or unchecks a checkbox
+ function processCheck() {
+    
+    let num = this.id.replace('check','num');
+    let numInput = document.getElementById(num);
+
+    if (this.checked){
+         numInput.disabled = false;
+         numInput.value = 1;  
+     }
+    else { 
+          numInput.disabled = true; 
+          numInput.value = ""; 
+      }
+  }
+    
+function qtyEmpty() {
+    let check = document.getElementById("check1").checked = true; 
+    let qty = document.getElementById("num1");
+    
+    if (document.getElementById("num1").value <1) {
+        document.getElementById("num1").disabled = true;
+        document.getElementById("check1").checked = false; 
+    }
+     if (document.getElementById("num2").value <1) {
+        document.getElementById("num2").disabled = true;
+        document.getElementById("check2").checked = false; 
+    }
+     if (document.getElementById("num3").value <1) {
+        document.getElementById("num3").disabled = true;
+        document.getElementById("check3").checked = false; 
+    }
+}
+
+
+
+function summarize() {
+       
+    let summary = 'Thank you for supporting our shop by purchasing:' + '\n';
+ let table = document.getElementById("cart");
+    // table.rows is an HTML collection (similar to an array) of 'tr' elements
+    let headerRow = true;   
+ for (let row of table.rows) {
+        if (!headerRow) {
+          let td = row.cells[0];
+          if (td.children[0].checked) {
+            summary = summary + row.cells[1].children[0].value + ' x ' + row.cells[2].innerText; 
+          }        
+        } else {
+          headerRow = false;
+        }
+ }
+    alert(summary);
+  }
+
+</script>
+</body>
+</html>
