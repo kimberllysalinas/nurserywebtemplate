@@ -1,6 +1,6 @@
 <!DOCTYPE html>
-<!--Kimberlly Salinas--> 
-<!--2022 February 8-->
+<!--Kimberlly Salinas
+* 2022 February 8-->
 <html lang="en">
 <head>
     <title>Luna's Nursery</title>
@@ -105,10 +105,11 @@
       }
   }
     
-function qtyEmpty() {
+function qtyEmpty() {  // use a for loop instead 
     let check = document.getElementById("check1").checked = true; 
     let qty = document.getElementById("num1");
     
+ /*
     if (document.getElementById("num1").value <1) {
         document.getElementById("num1").disabled = true;
         document.getElementById("check1").checked = false; 
@@ -120,6 +121,12 @@ function qtyEmpty() {
      if (document.getElementById("num3").value <1) {
         document.getElementById("num3").disabled = true;
         document.getElementById("check3").checked = false; 
+    }
+    */
+    
+    for (let i = document.getElementById("num"); i <=10; i++ ){
+        document.getElementById("num1").disabled = true; 
+        document.getElementById("check1").checked = false;
     }
 }
 
